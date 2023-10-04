@@ -69,5 +69,5 @@ def get_formal_name_2(fruit):
         formal_name = fruit_dict[fruit]
         return formal_name
     else:
-        raise ValueError
+        raise KeyError
 
