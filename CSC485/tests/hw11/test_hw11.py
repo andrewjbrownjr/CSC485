@@ -2,26 +2,14 @@ import pytest
 from CSC485.projects.hw11 import formal_names
 
 #Part 1 test
-def test_lowercase_1():
+@pytest.mark.parametrize('key',['apple','Apple','APPLE','aPpLe'])
+def test_apple_1(key):
     '''
     Method to test if get_formal_name returns the formal name of
-    a fruit with an all lowercase string input
+    an apple with apple as the input string
     '''
-    assert formal_names.get_formal_name('apple') == 'Malus domestica'
+    assert formal_names.get_formal_name(key) == 'Malus domestica'
 
-def test_uppercase_1():
-    '''
-    Method to test if get_formal_name returns the formal name of
-    a fruit with an all uppercase string input
-    '''
-    assert formal_names.get_formal_name('APPLE') == 'Malus domestica'
-
-def test_some_uppercase_1():
-    '''
-    Method to test if get_formal_name returns the formal name of a
-    fruit with an input containing some uppercase letters and some lowercase letters
-    '''
-    assert formal_names.get_formal_name('Apple') == 'Malus domestica'
 
 def test_not_a_fruit_1():
     '''
@@ -32,12 +20,13 @@ def test_not_a_fruit_1():
         formal_names.get_formal_name('this is not a fruit')
 
 #Part 2 tests
-def test_lowercase_2():
+@pytest.mark.parametrize('key',['apple','APPLE','Apple','aPpLe'])
+def test_apple_2(key):
     '''
     Method to test if get_formal_name_2 returns the formal name of
-    a fruit when the input is an all lowercase fruit name
+    an apple when the input is an apple
     '''
-    assert formal_names.get_formal_name_2('apple') == 'Malus domestica'
+    assert formal_names.get_formal_name_2(key) == 'Malus domestica'
 
 def test_uppercase_2():
     '''
@@ -58,5 +47,5 @@ def test_not_a_fruit_2():
     Method to test if get_formal_name_2 raises a KeyError when
     the input is not the name of a valid fruit
     '''
-    with pytest.raiss(KeyError):
+    with pytest.raises(KeyError):
         formal_names.get_formal_name_2('this is not a fruit')
