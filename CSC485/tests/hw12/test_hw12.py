@@ -1,5 +1,11 @@
 import pytest
 from CSC485.projects.hw12.compute_complexity import compute_complexity
+'''
+Testing compute complexity by categories of how much of the string
+is made up of complexifiers. Each category is tested using strigns
+containing different complexifiers, different string lengths, and
+different sequences of characters in the strings.
+'''
 
 @pytest.mark.parametrize('key',['@','~~~','##','$$$$$$','_______','----','+=+=+'])
 def test_all_complexifiers(key):
