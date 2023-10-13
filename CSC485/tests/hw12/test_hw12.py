@@ -7,11 +7,12 @@ containing different complexifiers, different string lengths, and
 different sequences of characters in the strings.
 '''
 
+
 class TestComputeComplexity:
     '''
     These methods will test compute_complexity
     '''
-    @pytest.mark.parametrize('key',['@','~~~','##','$$$$$$','_______','----','+=+=+'])
+    @pytest.mark.parametrize('key', ['@', '~~~', '##', '$$$$$$', '_______', '----', '+=+=+'])
     def test_all_complexifiers(self, key):
         '''
         Method to test that compute_complexity returns 100 when
@@ -19,7 +20,7 @@ class TestComputeComplexity:
         '''
         assert compute_complexity(key) == 100
 
-    @pytest.mark.parametrize('key',['a@','#e$e','%%tt','op-_','@@gg@@gg','~~~lll'])
+    @pytest.mark.parametrize('key', ['a@', '#e$e', '%%tt', 'op-_', '@@gg@@gg', '~~~lll'])
     def test_half_complexifiers(self, key):
         '''
         Method to test that compute_complexity returns 50
@@ -27,7 +28,7 @@ class TestComputeComplexity:
         '''
         assert compute_complexity(key) == 50
 
-    @pytest.mark.parametrize('key',['@aaa','##eeeeee','oo#o','p-pp','&&&aaaaaaaaa'])
+    @pytest.mark.parametrize('key', ['@aaa', '##eeeeee', 'oo#o', 'p-pp', '&&&aaaaaaaaa'])
     def test_quarter_complexifiers(self, key):
         '''
         Method to test that compute_complexity returns 25
@@ -35,7 +36,7 @@ class TestComputeComplexity:
         '''
         assert compute_complexity(key) == 25
 
-    @pytest.mark.parametrize('key',['@aaaaaaaaa','w#wwwwwwww','jj_jjjjjjj','ooooooooo$'])
+    @pytest.mark.parametrize('key', ['@aaaaaaaaa', 'w#wwwwwwww', 'jj_jjjjjjj', 'ooooooooo$'])
     def test_tenth_complexifiers(self, key):
         '''
         Method to test that compute_complexity returns 10 when
@@ -43,7 +44,7 @@ class TestComputeComplexity:
         '''
         assert compute_complexity(key) == 10
 
-    @pytest.mark.parametrize('key',['k','aaaaaaaaaa','llll','00000'])
+    @pytest.mark.parametrize('key', ['k', 'aaaaaaaaaa', 'llll', '00000'])
     def test_no_complexifiers(self, key):
         '''
         Method to test that compute_complexity returns 0 when
