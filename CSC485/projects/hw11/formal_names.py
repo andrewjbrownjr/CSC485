@@ -64,10 +64,12 @@ def get_formal_name_2(fruit):
         'cranberry': 'Vaccinium macrocarpon',
         'grapefruit': 'Citrus × paradisi'
     }
-    fruit = fruit.lower()
-    if fruit in fruit_dict.keys():
-        formal_name = fruit_dict[fruit]
-        return formal_name
+    if isinstance(fruit, str):
+        fruit = fruit.lower()
+        if fruit in fruit_dict.keys():
+            formal_name = fruit_dict[fruit]
+            return formal_name
+        else:
+            raise KeyError
     else:
-        raise KeyError
-
+        raise TypeError

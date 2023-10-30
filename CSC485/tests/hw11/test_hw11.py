@@ -25,6 +25,15 @@ class TestFormalNames:
         with pytest.raises(KeyError):
             formal_names.get_formal_name('this is not a fruit')
 
+    @pytest.mark.parametrize('key',[1, 324, [43, 'string'], ('str','int'), True])
+    def test_not_a_string(self, key):
+        '''
+        Method to test if get_formal_name raises a TypeError
+        when the input is not a string
+        '''
+        with pytest.raises(TypeError):
+            formal_names.get_formal_name(key)
+
 
 class TestFormalNames2:
     '''
@@ -45,3 +54,12 @@ class TestFormalNames2:
         '''
         with pytest.raises(KeyError):
             formal_names.get_formal_name_2('this is not a fruit')
+
+    @pytest.mark.parametrize('key', [1, 324, [43, 'string'], ('str', 'int'), True])
+    def test_not_a_string_2(self, key):
+        '''
+        Method to test if get_formal_name raises a TypeError
+        when the input is not a string
+        '''
+        with pytest.raises(TypeError):
+            formal_names.get_formal_name_2(key)
