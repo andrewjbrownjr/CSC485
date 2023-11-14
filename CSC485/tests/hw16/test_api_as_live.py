@@ -2,6 +2,7 @@ import json
 import pytest
 import requests
 
+@pytest.mark.live_api
 class TestApiGetThroughHttp:
     '''
     Testing the api's get endpoint through
@@ -36,6 +37,7 @@ class TestApiGetThroughHttp:
         assert data.get('password') == password
         assert data.get('strength') == 'bad'
 
+@pytest.mark.live_api
 class TestApiPostThroughHttp:
     '''
     Testing the api's post endpoint through
