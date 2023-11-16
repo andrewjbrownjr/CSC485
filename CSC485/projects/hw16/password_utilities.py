@@ -1,3 +1,4 @@
+
 def compute_complexity(data):
     """
         For the supplied string `data`, compute the complexity.
