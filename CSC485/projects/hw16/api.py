@@ -2,7 +2,7 @@ from flask import Flask, request, jsonify
 from password_utilities import evaluate_strength
 
 app = Flask(__name__)
-#test comment
+
 
 """
 To run this Flask app, at the command line, while in the folder for this homework
